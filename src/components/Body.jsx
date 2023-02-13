@@ -4,11 +4,13 @@ import NotFound from "./NotFound";
 import Resturantcard from "./Resturantcard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
+import userrContext from "../contexts/userContext"
 
 const Body = () => {
   const [searchInput, setsearchInput] = useState("");
   const [resturantCard, setresturantCard] = useState([]);
   const [filteredCards, setfilteredCards] = useState([]);
+  const [user, setuser] = useState("linta")
 
   async function getRestaurants() {
     const api = RESTAURANT_API;
@@ -30,8 +32,7 @@ const Body = () => {
   if (!resturantCard) return null;
 
   return resturantCard.length === 0 ? (
-    <Shimmer />
-  ) : (
+    <Shimmer />) : (
     <>
       <Search
         searchInput={searchInput}
@@ -39,10 +40,15 @@ const Body = () => {
         setfilteredCards={setfilteredCards}
         resturantCard={resturantCard}
       />
+       <userrContext.Consumer value={{user}}>
+         {({user})=><h5>{user.user}</h5> }
+       </userrContext.Consumer>
+      
       <div className="flex flex-wrap justify-center bg-purple-50">
         {filteredCards === null ? (
           <NotFound />
         ) : (
+          
           filteredCards?.map((data) => {
             return (
               <div key={data?.data?.id}>
