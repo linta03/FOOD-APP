@@ -9,15 +9,18 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantDetails from "./components/RestaurantDetails";
 import Shimmer from "./components/Shimmer";
-// import Mart from "./components/Mart";
 const Mart = lazy(() => import("./components/Mart"));
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Outlet />
-      <Footer />
+      <Provider store={store}>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
@@ -51,7 +54,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "/mart",
         element: (
-          <Suspense fallback={<Shimmer/>}>
+          <Suspense fallback={<Shimmer />}>
             <Mart />
           </Suspense>
         ),

@@ -3,8 +3,11 @@ import { LOGO_URL } from "../config";
 import "../main.css"
 import { Link } from "react-router-dom";
 import useNetworkStatus from "../hooks/useNetworkStatus";
+import { useSelector } from "react-redux";
+
 
 const Navbar =()=>{
+  const cartItems = useSelector(store=>store.cart.items);
     const online = useNetworkStatus();
   return(
     <>
@@ -18,8 +21,8 @@ const Navbar =()=>{
         <li className="mx-6"> <Link to="/">Home</Link> </li>
         <li className="mx-6"><Link to="/about">About</Link></li>
         <li className="mx-6"><Link to="/contact"> Contact</Link></li>
-        <li className="mx-6"><Link to="/cart"> Cart</Link></li>
-        <li className="mx-6"><Link to="/mart"> Mart</Link></li>
+        <li className="mx-6"><Link to="/cart"> Cart <span className="bg-purple-900 text-white rounded-tl-lg w-6">{cartItems.length}</span></Link></li>
+        <li className="mx-6 "><Link to="/mart"> Mart</Link></li>
       </ul>
     </div>
    </nav>

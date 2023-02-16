@@ -40,10 +40,10 @@ const Body = () => {
         setfilteredCards={setfilteredCards}
         resturantCard={resturantCard}
       />
-       <userrContext.Consumer value={{user}}>
+       {/* <userrContext.Consumer value={{user}}>
          {({user})=><h5>{user.user}</h5> }
        </userrContext.Consumer>
-      
+       */}
       <div className="flex flex-wrap justify-center bg-purple-50">
         {filteredCards === null ? (
           <NotFound />
@@ -52,7 +52,7 @@ const Body = () => {
           filteredCards?.map((data) => {
             return (
               <div key={data?.data?.id}>
-                <Resturantcard {...data?.data} />
+                <Resturantcard {...data?.data} category={"View Restaurant"} />
               </div>
             );
           })
