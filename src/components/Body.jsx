@@ -14,15 +14,14 @@ const Body = () => {
 
   async function getRestaurants() {
     const api = RESTAURANT_API;
-    try {
+    
       const response = await fetch(api);
       const data = await response.json();
       // console.log(data?.data?.cards[2]?.data?.data?.cards);
       setresturantCard(data?.data?.cards[2]?.data?.data?.cards);
       setfilteredCards(data?.data?.cards[2]?.data?.data?.cards);
-    } catch (err) {
-      console.error(err);
-    }
+    
+   
   }
 
   useEffect(() => {
@@ -34,12 +33,14 @@ const Body = () => {
   return resturantCard.length === 0 ? (
     <Shimmer />) : (
     <>
+    <div data-testid="search">
       <Search
         searchInput={searchInput}
         setsearchInput={setsearchInput}
         setfilteredCards={setfilteredCards}
         resturantCard={resturantCard}
       />
+      </div>
        {/* <userrContext.Consumer value={{user}}>
          {({user})=><h5>{user.user}</h5> }
        </userrContext.Consumer>

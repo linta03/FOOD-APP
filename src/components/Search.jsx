@@ -16,6 +16,7 @@ const Search = ({ searchInput, setsearchInput,setfilteredCards ,resturantCard}) 
                 }}
             />
             <button
+          
                 className="rounded-md my-5 p-1 bg-purple-900 text-white h-10"
                 onClick={() => {
                     // Need to filter data
