@@ -1,6 +1,6 @@
 import React from "react";
 import { LOGO_URL } from "../config";
-// import "../main.css"
+import "../main.css"
 import { Link } from "react-router-dom";
 import useNetworkStatus from "../hooks/useNetworkStatus";
 import { useSelector } from "react-redux";

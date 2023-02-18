@@ -10,11 +10,9 @@ const RestaurantDetails = () => {
 
 
     const params = useParams();
-    const dispatch = useDispatch();
     const { id } = params;
 
     const restaurant = useRestaurantMenu(id);
-
  
 
 
@@ -36,11 +34,10 @@ const RestaurantDetails = () => {
                     <ul className='flex flex-wrap justify-center'>
                         {
                             Object.values(restaurant?.menu?.items).map((items) => (
-                                // <li key={items?.id} className="bg-purple-300 w-auto m-3 p-3 rounded-md font-thin">{items?.name}</li>
-                                // <FoodCards {...items} key={items.id}/>
+                               
                                 <>
                                 
-                                <Resturantcard {...items} key={items.id} category={"View item"} adding={true} card={items} />
+                                <Resturantcard {...items} key={items.restId} category={"View item"} adding={true} card={items} />
                                 </>
 
                             ))

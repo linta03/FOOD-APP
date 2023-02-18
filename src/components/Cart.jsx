@@ -2,13 +2,17 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../store/slices/cartSlice";
 import CartCards from "./CartCards";
+
+// Cart renders a card for each item in the cart
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+
+  //clearing cart all items dispatching an action from store "clear cart"
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-
+ // Render the cart cards, or show a message to the user if there are no items in the cart
   return (
     <>
       {cartItems.length >0 ? (

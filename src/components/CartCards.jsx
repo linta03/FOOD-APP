@@ -1,16 +1,19 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { IMG_CDN_URL } from "../config";
 import { removeOneItem } from "../store/slices/cartSlice";
 // import { IMG_CDN_URL } from '../config'
 
+
+// CartCards renders a card for each item in the cart, with a Remove button to delete it from the cart
 const CartCards = ({ cloudinaryImageId, name, price, id }) => {
-    // const cartItems = useSelector(store=> store.cart.items)
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); // create a dispatch variable from react-redux
 
 
+  // Handle removing item from cart using dispatch & removeOneItem from cartSlice
  const handleRemoveItem =(id)=>{
-    dispatch(removeOneItem(id))
+  console.log(id)
+    dispatch(removeOneItem(id)) 
     }
 
   return (

@@ -13,6 +13,8 @@ const Mart = lazy(() => import("./components/Mart"));
 import { Provider } from "react-redux";
 import store from "./store/store";
 
+
+// The entry point to the App component
 const App = () => {
   return (
     <>
@@ -24,37 +26,47 @@ const App = () => {
     </>
   );
 };
-
+// createBrowserRouter setup
 export const appRouter = createBrowserRouter([
   {
+     // path for root URL
     path: "/",
+     // pass the App component
     element: <App />,
+     // add error page
     errorElement: <ErrorPage />,
+     // navigate and attached router children to the main path
     children: [
       {
         path: "/",
+         // body component
         element: <Body />,
       },
       {
         path: "/about",
+           // about page
         element: <About />,
       },
       {
         path: "/contact",
+          // contact page
         element: <Contact />,
       },
       {
         path: "/cart",
+          // cart page
         element: <Cart />,
       },
       {
         path: "/restaurant/:id",
+          // restaurant details
         element: <RestaurantDetails />,
       },
       {
         path: "/mart",
         element: (
-          <Suspense fallback={<Shimmer />}>
+        // lazily loaded mart component with shimmer effect
+          <Suspense fallback={<Shimmer />}>        
             <Mart />
           </Suspense>
         ),
