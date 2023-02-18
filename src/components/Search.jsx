@@ -21,7 +21,7 @@ const Search = ({ searchInput, setsearchInput,setfilteredCards ,resturantCard}) 
                 onClick={() => {
                     // Need to filter data
                     const data = filterMenu(searchInput, resturantCard);
-                    // Update the statew
+                    // Update the state
                     if(data.length ===0){
                         setfilteredCards(null)
                     }else{

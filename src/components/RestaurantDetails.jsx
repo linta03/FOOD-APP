@@ -1,17 +1,20 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { IMG_CDN_URL } from '../config';
 import useRestaurantMenu from '../hooks/useRestaturantMenu';
-import { addItem } from '../store/slices/cartSlice';
 import Resturantcard from './Resturantcard';
 import Shimmer from './Shimmer';
+
+
+//Restaurant details in other page
 const RestaurantDetails = () => {
 
-
+// Get the params from the URL with the useParams hook
     const params = useParams();
+    // Destructure the id from the params
     const { id } = params;
 
+// Use a custom hook to get the restaurant data
     const restaurant = useRestaurantMenu(id);
  
 
@@ -33,11 +36,11 @@ const RestaurantDetails = () => {
                 <div>
                     <ul className='flex flex-wrap justify-center'>
                         {
-                            Object.values(restaurant?.menu?.items).map((items) => (
+                            Object.values(restaurant?.menu?.items).map((items,i) => (
                                
                                 <>
                                 
-                                <Resturantcard {...items} key={items.restId} category={"View item"} adding={true} card={items} />
+                                <Resturantcard {...items}  key={`item-${i}`} category={"View item"} adding={true} card={items} />
                                 </>
 
                             ))

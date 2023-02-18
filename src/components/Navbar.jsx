@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useNetworkStatus from "../hooks/useNetworkStatus";
 import { useSelector } from "react-redux";
 
-
+//Declare the Navbar and constuct the nav bar
 const Navbar =()=>{
   const cartItems = useSelector(store=>store.cart.items);
     const online = useNetworkStatus();

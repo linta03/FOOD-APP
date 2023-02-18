@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 const Accordian = ({ title, description, isShow ,setIsVisible}) => {
+
+    // this function sets the visibility of the accordion to true
   const handleShow = () => {
     setIsVisible(true);
   };
+    // this function sets the visibility of the accordion to false
   const handleHide = () => {
     setIsVisible(false);
   };

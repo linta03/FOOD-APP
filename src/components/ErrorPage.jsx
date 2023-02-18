@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRouteError } from 'react-router-dom'
 
+
+//React router dom error page when someone write false info in url it appears
 const ErrorPage = () => {
    const error = useRouteError();
 

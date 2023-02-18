@@ -27,7 +27,7 @@ const Resturantcard = ({name,cloudinaryImageId,costForTwoString,avgRating,id,cat
     <div className="font-semibold"><h5>{costForTwoString}</h5> </div>
     <div className="calories">{avgRating}⭐</div>
     <Link to={"/restaurant/"+ id}>
-   <p>{id}</p>
+   {/* <p>{id}</p> */}
     {
       adding ?
       <>

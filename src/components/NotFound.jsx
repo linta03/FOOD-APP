@@ -1,6 +1,7 @@
 import React from 'react'
 import { ERROR_PAGE_IMG_BG_URL } from '../config'
 
+//NotFound component displays a page when something not found
 const NotFound = () => {
   return (
     <div className='flex justify-center flex-col'>

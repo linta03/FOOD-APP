@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Accordian from "./Accordian";
 
 const About = () => {
+  // Hook to toggle the visibility of accordian sections
   const [visibleSection, setvisibleSection] = useState("first")
 
   return (
