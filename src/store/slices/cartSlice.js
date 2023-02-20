@@ -19,6 +19,12 @@ const cartSlice = createSlice({
            state.items = state.items.filter((item)=>( 
                 item.id !== action.payload
             ))
+        },
+        increaseQuantity:(state,action)=>{
+
+        },
+        decreaseQuantity:(state,action)=>{
+
         }
     }
 });

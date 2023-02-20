@@ -15,6 +15,14 @@ const CartCards = ({ cloudinaryImageId, name, price, id }) => {
   console.log(id)
     dispatch(removeOneItem(id)) 
     }
+ const handleIncreaseQuantity =(id)=>{
+  console.log(id)
+    dispatch(removeOneItem(id)) 
+    }
+ const handleDecreaseQuantity =(id)=>{
+  console.log(id)
+    dispatch(removeOneItem(id)) 
+    }
 
   return (
     <div className="bg-purple-100 w-2/5 m-5  flex rounded-md shadow-md">
@@ -33,6 +41,11 @@ const CartCards = ({ cloudinaryImageId, name, price, id }) => {
         <h3 className="font-bold">Price : {price} PKR</h3>
         <h3 className="font-bold">ID : {id}</h3>
         <button className="bg-red-600 w-32 h-10 text-white mt-5 rounded-md font-semibold mb-4" onClick={()=>handleRemoveItem(id)}>Remove Item</button>
+        <div>
+          <button className="bg-purple-500 rounded-md shadow-md text-white w-7 m-2" onClick={()=>handleIncreaseQuantity(id)}>+</button>
+          <span className="ma">1</span>
+          <button className="bg-purple-500 rounded-md shadow-md text-white w-7 m-2" onClick={()=>handleDecreaseQuantity(id)}>-</button>
+        </div>
       </div>
     </div>
   );
