@@ -1,28 +1,22 @@
 import React from "react";
 import { useDispatch} from "react-redux";
 import { IMG_CDN_URL } from "../config";
-import { removeOneItem } from "../store/slices/cartSlice";
+import { increaseQuantity, removeOneItem } from "../store/slices/cartSlice";
 // import { IMG_CDN_URL } from '../config'
 
-
+//cloudinaryImageId, name, price, id 
 // CartCards renders a card for each item in the cart, with a Remove button to delete it from the cart
-const CartCards = ({ cloudinaryImageId, name, price, id }) => {
+const CartCards = ({ card}) => {
     const dispatch = useDispatch(); // create a dispatch variable from react-redux
-
 
   // Handle removing item from cart using dispatch & removeOneItem from cartSlice
  const handleRemoveItem =(id)=>{
   console.log(id)
     dispatch(removeOneItem(id)) 
     }
- const handleIncreaseQuantity =(id)=>{
-  console.log(id)
-    dispatch(removeOneItem(id)) 
-    }
- const handleDecreaseQuantity =(id)=>{
-  console.log(id)
-    dispatch(removeOneItem(id)) 
-    }
+ 
+
+    const {cloudinaryImageId , name ,price , id} = card;
 
   return (
     <div className="bg-purple-100 w-2/5 m-5  flex rounded-md shadow-md">
@@ -42,9 +36,23 @@ const CartCards = ({ cloudinaryImageId, name, price, id }) => {
         <h3 className="font-bold">ID : {id}</h3>
         <button className="bg-red-600 w-32 h-10 text-white mt-5 rounded-md font-semibold mb-4" onClick={()=>handleRemoveItem(id)}>Remove Item</button>
         <div>
-          <button className="bg-purple-500 rounded-md shadow-md text-white w-7 m-2" onClick={()=>handleIncreaseQuantity(id)}>+</button>
-          <span className="ma">1</span>
-          <button className="bg-purple-500 rounded-md shadow-md text-white w-7 m-2" onClick={()=>handleDecreaseQuantity(id)}>-</button>
+          <div className="m-5">
+          <label for="quantity">Quantity:</label>
+
+          <select name="quantity" id="Quantity">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  
+</select>
+          </div>
         </div>
       </div>
     </div>

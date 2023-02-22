@@ -6,7 +6,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: 'cart',   // name for the slice
     initialState:{
-        items:[]       // initial state is an empty array
+        items:[
+          
+        ]       // initial state is an empty array
     },
     reducers:{
         addItem:(state,action)=>{
@@ -20,12 +22,7 @@ const cartSlice = createSlice({
                 item.id !== action.payload
             ))
         },
-        increaseQuantity:(state,action)=>{
-
-        },
-        decreaseQuantity:(state,action)=>{
-
-        }
+     
     }
 });
 export const {addItem,clearCart,removeOneItem} = cartSlice.actions

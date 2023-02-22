@@ -18,7 +18,7 @@ const RestaurantDetails = () => {
     const restaurant = useRestaurantMenu(id);
  
 
-
+console.log(Resturantcard)
     return (!restaurant) ? <Shimmer /> : (
         <>
             <div className="">

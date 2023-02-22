@@ -12,6 +12,7 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+  console.log(Object.values(cartItems));
  // Render the cart cards, or show a message to the user if there are no items in the cart
   return (
     <>
@@ -25,7 +26,7 @@ const Cart = () => {
               Clear Cart
             </button>
           </div>
-          {cartItems.map((item) => (
+          {Object.values(cartItems).map((item) => (
             <CartCards {...item} key={item.id} />
           ))}
         </div>

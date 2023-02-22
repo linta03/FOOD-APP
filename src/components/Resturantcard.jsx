@@ -6,11 +6,12 @@ import { IMG_CDN_URL } from '../config';
 import {addItem} from "../store/slices/cartSlice"
 
 const Resturantcard = ({name,cloudinaryImageId,costForTwoString,avgRating,id,category,adding,price,card}) => {
+
   
   const dispatch = useDispatch();
   
   const handleAddFood=()=>{
-     dispatch(addItem(card))
+     dispatch(addItem({card,id}));
   }
     
   return (
