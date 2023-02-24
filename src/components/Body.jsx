@@ -4,6 +4,7 @@ import NotFound from "./NotFound";
 import Resturantcard from "./Resturantcard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
+import Slider from "./Slider";
 
 const Body = () => {
     // setting state for search input and resturant card
@@ -39,6 +40,8 @@ const Body = () => {
     <Shimmer />) : (  // returning shimmer component or filtered cards depending on the data present in the resturant card state
 
     <>
+    <Slider filteredCards={filteredCards}/>
+
     <div data-testid="search">
       <Search
         searchInput={searchInput}
@@ -47,6 +50,7 @@ const Body = () => {
         resturantCard={resturantCard}
       />
       </div>
+
       <div className="flex flex-wrap justify-center bg-purple-50">
         {filteredCards === null ? (
           <NotFound />

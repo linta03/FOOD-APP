@@ -11,7 +11,7 @@ import { RESTAURANT_MENU } from "../config";
         try {
             const response = await fetch(api);
             const data = await response.json();
-            console.log(data?.data);
+            // console.log(data?.data);
             setrestaurant(data?.data);
 
         } catch (err) {

@@ -12,15 +12,15 @@ const CartCards = ({ cloudinaryImageId, name, price, id }) => {
 
   // Handle removing item from cart using dispatch & removeOneItem from cartSlice
  const handleRemoveItem =(id)=>{
-  console.log(id)
+  // console.log(id)
     dispatch(removeOneItem(id)) 
     }
  const handleIncreaseQuantity =(id)=>{
-  console.log(id)
+  // console.log(id)
     dispatch(removeOneItem(id)) 
     }
  const handleDecreaseQuantity =(id)=>{
-  console.log(id)
+  // console.log(id)
     dispatch(removeOneItem(id)) 
     }
 

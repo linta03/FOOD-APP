@@ -23,7 +23,7 @@ test("to check shimmer load first on Homepage", async () => {
     </StaticRouter>
   );
   await waitFor(()=>{expect(body.getByTestId("search"))})
-  console.log(body)
+  // console.log(body)
 const shimmer = body.getByTestId("shimmer-Ui");
 expect(shimmer.children.length).toBe(24); 
 

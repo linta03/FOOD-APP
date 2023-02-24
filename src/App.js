@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import Body from "./components/Body";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -12,17 +12,26 @@ import Shimmer from "./components/Shimmer";
 const Mart = lazy(() => import("./components/Mart"));
 import { Provider } from "react-redux";
 import store from "./store/store";
+import Main from "./components/Main";
 
 
 // The entry point to the App component
 const App = () => {
+   const [start, setstart] = useState(true);
+
+   const handleGoOnFood=()=>{
+           setstart(false)
+   }
   return (
     <>
-      <Provider store={store}>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </Provider>
+    {
+      start ? <Main handleGoOnFood={handleGoOnFood}/>:   <Provider store={store}>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </Provider>
+    }
+   
     </>
   );
 };

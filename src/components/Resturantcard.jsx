@@ -22,17 +22,17 @@ const Resturantcard = ({name,cloudinaryImageId,costForTwoString,avgRating,id,cat
     
     <div className='p-3 flex flex-col justify-center'>
       <Link to={"/restaurant/"+ id}>
-    <div className="font-bold"><h3>{name}</h3></div>
+    <div className="font-bold text-clip overflow-hidden w-full whitespace-nowrap"><h3>{name}</h3></div>
     </Link>
-    <div className="font-semibold"><h5>{costForTwoString}</h5> </div>
-    <div className="calories">{avgRating}⭐</div>
+    <div className="font-semibold text-clip overflow-hidden w-full whitespace-nowrap"><h5>{costForTwoString}</h5> </div>
+    <div className="calories text-clip overflow-hidden w-full whitespace-nowrap">{avgRating}⭐</div>
     <Link to={"/restaurant/"+ id}>
    {/* <p>{id}</p> */}
     {
       adding ?
       <>
-       <div className="font-extrabold"><h5>💵 {price} Rs</h5></div>
-       <button className='bg-purple-900 w-32 h-10 text-white mt-2 rounded-md font-semibold' onClick={()=>handleAddFood()}>Add</button></>: <button className='bg-purple-900 w-32 h-10 text-white mt-2 rounded-md font-semibold'> {category}</button>
+       <div className="font-extrabold text-clip overflow-hidden w-full whitespace-nowrap"><h5>💵 {price} Rs</h5></div>
+       <button className='bg-purple-900 w-32 h-10 text-white mt-2 rounded-md font-semibold text-clip overflow-hidden  whitespace-nowrap' onClick={()=>handleAddFood()}>Add</button></>: <button className='bg-purple-900 w-32 h-10 text-white mt-2 rounded-md font-semibold'> {category}</button>
     }
   
     </Link>
